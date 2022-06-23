@@ -1,0 +1,21 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import '../css/gz.css';
+@import 'old';
+
+html {
+  scroll-behavior: smooth;
+}
+
+// html, body {font-family: 'theSans';}
+.block{display: block;}
+.nav{ margin-bottom: 20px;}
+
+a, a:active, a:visited, a:hover {text-decoration: none;}

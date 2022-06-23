@@ -1,0 +1,510 @@
+@font-face {
+  font-family: 'theSans';
+src: url('../font/TheSans-5-Regular.otf');
+}
+
+@font-face {
+  font-family: 'harabarahand';
+src: url('../font/SANDTH__ 2.TTF');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url(../images/bg.png) bottom repeat-x;
+  font-family: 'Source Sans Pro';
+  // color: #b9b9b9;
+  color: #666666;
+  font-size: 11pt;
+}
+
+p {
+  text-align: justify
+}
+
+.Source_Sans_Pro {
+  font-family: 'Source Sans Pro'
+}
+
+.harabarahand {
+  font-family: 'Harabarahand'
+}
+
+.idiomas {
+  right: 5px;
+  position: absolute;
+  text-align: center;
+  width: 82px;
+}
+
+.bgVerdeClaro {
+  background: #ebf1de
+}
+
+.bgVerdeOscuro {
+  background: #d8e4bc
+}
+
+.baseWidth {
+  width: 990px;
+}
+
+.bgGreen {
+  background: #b2b61e;
+}
+
+.colorGreen {
+  color: #628127;
+}
+
+.colorGreen2 {
+  color: #40600c;
+}
+
+a.colorPerla,
+a.colorPerla:hover,
+.colorPerla {
+  color: #f5f5f5
+}
+
+a.colorGrisActive,
+a.colorGris:hover {
+  color: #009eff;
+}
+
+a.colorGris,
+.colorGris,
+.color_gris {
+  color: #A3a3a3;
+}
+
+.colorGris2 {
+  color: #c8c8ca;
+}
+
+.bg_gris_paraguay {
+  background: #b2b2b2;
+}
+
+.bg_mostaza {
+  background: #f4bd0f;
+}
+
+.bgGris1 {
+  background: #5b5b5b;
+}
+
+.bgGris2 {
+  background: #9b9b9b;
+}
+
+.bgGris3 {
+  background: #b5b5b5;
+}
+
+.bgGris5 {
+  background: #f0f0f0;
+}
+
+.nav {
+  border-bottom: 1px solid #b9b9b9
+}
+
+.nav a {
+  color: #666
+}
+
+.subrayado {
+}
+
+.body_margin_bottom {
+  padding-bottom: 40px;
+}
+
+.color_azul_link {
+  color: #2e3b97;
+}
+
+.color_celeste {
+  color: #009eff;
+}
+
+h2.color_celeste {
+  padding: 7px 0 0 0;
+  margin: 0
+}
+
+.color_mostaza {
+  color: #f4bd0f
+}
+
+.bg_gris_paraguay {
+  background: #9b9b9b
+}
+
+.pie_bann_height {
+  height: 105px
+}
+
+.color_verde_paraguay {
+  color: #8fb80b
+}
+
+.color_azul_paraguay {
+  color: #3f99ff
+}
+
+.inmuebles_list_box img {
+  margin-right: 5px;
+}
+
+.inmuebles_list_box a,
+.inmuebles_list_box a:hover {
+  color: #666
+}
+
+.inmuebles_list_box a.color_celeste {
+  color: #009eff;
+}
+
+.mapa_paraguay span {
+  height: 30px;
+  display: block;
+}
+
+.ley_hover {
+  background: #cecece;
+}
+
+.ley_hover:hover {
+  background: #c5c5c5;
+}
+
+.line_top_1 {
+  background: url(../images/top_line_1.png) top right no-repeat;
+}
+
+.line_top_2 {
+  background: url(../images/top_line_2.png) top right no-repeat;
+}
+
+.line_top_3 {
+  background: url(../images/top_line_3.png) top right no-repeat;
+}
+
+.line_top_4 {
+  background: url(../images/top_line_4.png) top right no-repeat;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  float: right;
+  list-style: none;
+}
+/*.nav ul li a{ font-weight: bold  }*/
+.nav ul li a.active, .nav ul li a:hover {
+  color: #5f8f1b;
+}
+
+/*home*/
+.line_top_bottom {
+  border-top: 3px solid #5fb1be;
+  border-bottom: 3px solid #5fb1be;
+  padding: 10px 0;
+}
+
+.line_top_bottom_gris {
+/*border-top:3px solid #666;*/
+  border-bottom: 3px solid #666;
+  padding: 10px 0;
+}
+
+.line_top_bottom2 {
+/*border-top:2px solid #b9b9b9;*/
+  border-bottom: 1px solid #b9b9b9;
+  padding: 10px 0;
+}
+
+.footer {
+}
+
+img {
+  max-width: 100%;
+}
+
+.servicios_right a,
+.servicios_left a {
+  display: block;
+  padding: 5px;
+  color: #666;
+  font-size: 32px;
+  padding: 10px;
+}
+
+.servicios_right a:hover,
+.servicios_left a:hover {
+  color: #009eff
+}
+
+.line_round_left {
+  background: url(../images/line_round_left.png) top left no-repeat;
+  height: 13px;
+}
+
+.subrayado, .line_round_right {
+  background: url(../images/line_round_right.png) top right no-repeat;
+  height: 13px;
+}
+
+input,textarea {
+  background: #e5e5e5;
+  padding: 5px;
+  border: 1px solid #999
+}
+
+.degradado_gris {
+  background: #e2e2e2;
+/* Old browsers */
+  background: -moz-linear-gradient(top,  #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+/* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(51%,#d1d1d1), color-stop(100%,#fefefe));
+/* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+/* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+/* IE10+ */
+  background: linear-gradient(to bottom,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+/* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 );
+/* IE6-9 */
+}
+
+#scrolable {
+  height: 495px;
+}
+
+h2 {
+  margin: 20px 10px 0px 10px;
+  padding: 0
+}
+
+.padding-left0 {
+  padding-left: 0
+}
+
+.padding-bottom0 {
+  padding-bottom: 0
+}
+
+.margin-left0 {
+  margin-left: 0;
+}
+
+.rounded_left6 {
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.rounded_right6 {
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+/**
+*	EU
+**/
+.paraguay_banner {
+  height: 300px;
+  background: url(../images/conoce_paraguay/foto.png)
+}
+
+.paraguay_distancia_banner {
+  height: 76px;
+  background: url(../images/conoce_paraguay/banner_distancias.png);
+  background-size: 100%;
+}
+
+.recomendado {
+  height: 116px;
+  background: url(../imagess/conoce_paraguay/banner_recomendados.png);
+  background-size: 100%;
+}
+
+.opacity0 {
+  opacity: 0
+}
+
+.servicios_volver {
+  border-top: solid #acacac 5px;
+  display: block;
+  width: 70%;
+  margin: auto;
+  color: #009eff;
+}
+
+iframe {
+  background-color: transparent;
+}
+
+.fotoNosotros {
+  width: 75px;
+  height: 75px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+}
+
+/*NAV*/
+.nav > li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  padding: 10px 12px;
+}
+
+.nav li .flecha {
+  font-size: 9px;
+  padding-left: 6px;
+  display: none;
+}
+
+.nav li a:not(:last-child) .flecha {
+  display: inline;
+}
+
+.nav li a:hover {
+}
+
+.nav li {
+  position: relative;
+}
+
+.nav li ul {
+  z-index: 1000;
+  display: none;
+  background: #999;
+  position: absolute;
+  min-width: 230px;
+}
+
+.nav li ul li {
+  float: none
+}
+
+.nav li ul li a {
+  color: #fff;
+}
+
+.nav li ul li a:hover,
+.nav li ul li a.active {
+  background: #666;
+  color: #fff;
+}
+
+.nav li:hover > ul {
+  display: block;
+}
+
+.nav li ul li ul {
+  right: -140px;
+  top: 0;
+}
+
+/* jssor slider arrow navigator skin 05 css */
+/*
+.jssora05l              (normal)
+.jssora05r              (normal)
+.jssora05l:hover        (normal mouseover)
+.jssora05r:hover        (normal mouseover)
+.jssora05ldn            (mousedown)
+.jssora05rdn            (mousedown)
+*/
+.jssora05l, .jssora05r, .jssora05ldn, .jssora05rdn {
+  position: absolute;
+  cursor: pointer;
+  display: block;
+  background: url(../images/a17.png) no-repeat;
+  overflow: hidden;
+}
+
+.jssora05l {
+  background-position: -10px -40px;
+}
+
+.jssora05r {
+  background-position: -70px -40px;
+}
+
+.jssora05l:hover {
+  background-position: -130px -40px;
+}
+
+.jssora05r:hover {
+  background-position: -190px -40px;
+}
+
+.jssora05ldn {
+  background-position: -250px -40px;
+}
+
+.jssora05rdn {
+  background-position: -310px -40px;
+}
+
+
+/* jssor slider thumbnail navigator skin 02 css */
+/*
+.jssort02 .p            (normal)
+.jssort02 .p:hover      (normal mouseover)
+.jssort02 .pav          (active)
+.jssort02 .pav:hover    (active mouseover)
+.jssort02 .pdn          (mousedown)
+*/
+.jssort02 .w {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.jssort02 .c {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 95px;
+  height: 62px;
+  border: #b9b9b9 2px solid;
+}
+
+.jssort02 .p:hover .c, .jssort02 .pav:hover .c, .jssort02 .pav .c {
+  background: url(../images/t01.png) center center;
+  border-width: 0px;
+  top: 2px;
+  left: 2px;
+  width: 95px;
+  height: 62px;
+}
+
+.jssort02 .p:hover .c, .jssort02 .pav:hover .c {
+  top: 0px;
+  left: 0px;
+  width: 97px;
+  height: 64px;
+  border: #fff 1px solid;
+}
