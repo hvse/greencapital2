@@ -51,7 +51,7 @@ Auth::routes();
 Route::prefix('admin')->group(function () {
   Route::resources([
     'users' => \App\Http\Controllers\admin\UserController::class,
-    // 'payments' => \App\Http\Controllers\backend\PaymentController::class,
+    'inmuebles' => \App\Http\Controllers\admin\InmueblesController::class,
   ]);
   Route::redirect('/', route('users.index'));
   Auth::routes([
