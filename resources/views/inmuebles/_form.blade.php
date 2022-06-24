@@ -150,20 +150,22 @@
     <!-- IMAGES -->
     <ul id="sortable">
     @php
-      /*
+      /**/
     @endphp
-    <? $fotos = Fotos::inmueblePhoto( $inmueble->id );
-    foreach( $fotos as $foto ){ ?>
-    <li class="input_image" id="photo{{ $foto->id?>">
-      <a href="#myModal" onClick="toDelete({{ $foto->id?>)" data-toggle="modal" title="Eliminar esta foto"><span class="icon-trash icon-white"></span></a>
-      <? $src = "./images/inmuebles/ch/".$foto->id.".jpg"; ?>
-      <img src="{{ is_file($src)?$src:""?>" />
-      <input type="hidden" name="fotos[]" value="{{ $foto->id?>">
-      <input class="input_portada" type="radio" name="portada" value="{{ $foto->id?>" <?if( $foto->id == $inmueble->portada ){echo'checked';}?> title="Imagen para mostrar en la lista de búsquedas" />
+    @foreach( $fotos as $foto )
+    <li class="input_image" id="photo{{ $foto->id }}">
+      <a href="#myModal" onClick="toDelete({{ $foto->id }})" data-toggle="modal" title="Eliminar esta foto"><span class="icon-trash icon-white"></span></a>
+      @php
+        $src = "./images/inmuebles/ch/".$foto->id.".jpg";
+        $src = is_file($src) ? $src : "";
+      @endphp
+      <img src="{{ $src }}" />
+      <input type="hidden" name="fotos[]" value="{{ $foto->id }}">
+      <input class="input_portada" type="radio" name="portada" value="{{ $foto->id }}" <?if( $foto->id == $inmueble->portada ){echo'checked';} }} title="Imagen para mostrar en la lista de búsquedas" />
     </li>
-    <? } ?>
+    @endforeach
     @php
-      */
+      /**/
     @endphp
     </ul>
 

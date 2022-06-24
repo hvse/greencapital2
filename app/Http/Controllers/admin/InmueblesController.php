@@ -12,6 +12,7 @@ use App\Models\Categoria;
 use App\Models\Medida;
 use App\Models\Moneda;
 use App\Models\Paraguay;
+use App\Models\Foto;
 use App\Models\User;
 use \Illuminate\Http\Response;
 
@@ -49,6 +50,7 @@ class InmueblesController extends Controller
       "medidas" => Medida::all(),
       "monedas" => Moneda::all(),
       "departamentos" => Paraguay::orderBy('nombre'),
+      "fotos" => [],
       // "departamentos" => Paraguay::find("all", array("conditions"=>array("departamento_id=0"), "order" => "nombre" )),
     ]);
   }
