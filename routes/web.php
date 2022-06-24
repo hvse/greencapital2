@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +48,15 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::prefix('admin')->group(function () {
+  Route::resources([
+    'users' => \App\Http\Controllers\admin\UserController::class,
+    // 'payments' => \App\Http\Controllers\backend\PaymentController::class,
+  ]);
+  Route::redirect('/', route('users.index'));
+  Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+  ]);
+});

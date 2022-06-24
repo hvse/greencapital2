@@ -3,6 +3,7 @@
     "/js/anim_top.js": "/js/anim_top.js",
     "/js/bootstrap.js": "/js/bootstrap.js",
     "/css/site.css": "/css/site.css",
+    "/css/app.css": "/css/app.css",
     "/css/old.css": "/css/old.css",
     "/css/dashboard.css": "/css/dashboard.css"
 }

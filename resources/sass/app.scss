@@ -1,0 +1,79 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+html {
+  scroll-behavior: smooth;
+}
+
+#map {
+  height: 700px;
+  width: 100%;
+  text-align: center;
+}
+
+.basic_over {
+  &:not(.active) {
+    &:hover{
+      background: $gray;
+    }
+  }
+}
+
+.progress {
+  padding: 5;
+  width: 100%;
+}
+
+.slide_texts{
+  background-color: #121f28c2
+}
+
+.front-tup {
+  font-size: 124px;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .carousel-item > img {
+    height: 35rem !important;
+    background-size: cover;
+  }
+  .carousel-caption {
+    top: 0rem !important;
+  }
+  .carousel-item {
+    height: 35rem !important;
+  }
+}
+
+.topBg {
+  background-image: url('/images/slide_1.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+
+.wFloat{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom: 28px;
+  right: 128px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
