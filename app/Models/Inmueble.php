@@ -3,7 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Inmuebles extends Model {
+class Inmueble extends Model {
 	
 	protected $table = 'inmuebles';
 	protected $fillable = [
@@ -135,32 +135,32 @@ class Inmuebles extends Model {
 
 	public function agente()
   {
-    return $this->belongsTo('App\Models\User', 'agente_id');
+    return $this->belongsTo(App\Models\User::class, 'agente_id');
   }
 
 	public function categoria()
   {
-    return $this->belongsTo('App\Models\Categorias', 'categoria_id');
+    return $this->belongsTo(App\Models\Categoria::class, 'categoria_id');
   }
 
 	public function medida()
   {
-    return $this->belongsTo('App\Models\Medidas', 'medida_id');
+    return $this->belongsTo(App\Models\Medida::class, 'medida_id');
   }
 
 	public function moneda()
   {
-    return $this->belongsTo('App\Models\Monedas', 'moneda_id');
+    return $this->belongsTo(App\Models\Moneda::class, 'moneda_id');
   }
 
 	public function operacion()
   {
-    return $this->belongsTo('App\Models\Operaciones', 'operaciones_id');
+    return $this->belongsTo(App\Models\Operacion::class, 'operaciones_id');
   }
 
 	public function ciudad()
   {
-    return $this->belongsTo('App\Models\Paraguay', 'departamento_ciudad');
+    return $this->belongsTo(App\Models\Paraguay::class, 'departamento_ciudad');
   }
 
 }

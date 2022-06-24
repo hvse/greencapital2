@@ -13,7 +13,7 @@ class Paraguay extends Model {
 
 	public function inmuebles()
   {
-    return $this->hasMany('App\Models\Inmuebles','departamento_ciudad');
+    return $this->hasMany(App\Models\Inmueble::class, 'departamento_ciudad');
   }
 
 }

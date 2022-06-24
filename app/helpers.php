@@ -143,6 +143,10 @@ function correctFormat($s) {
   return $s; //utf8_encode($s);
 }
 
+function ifEcho ($condition, $echo, $else = '') {
+  return $condition ? $echo : $else;
+}
+
 const DEBUGING = true;
 
 

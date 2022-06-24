@@ -3,7 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Fotos extends Model {
+class Foto extends Model {
 	
 	protected $table = 'fotos';
 	protected $fillable = [
@@ -13,12 +13,12 @@ class Fotos extends Model {
 	];
 
 	public static function inmueblePhoto ( $inmueble_id ) {
-		return Fotos::find( "all", array("conditions" => array( "inmueble_id = ?", $inmueble_id ), 'order' => 'orden asc' ) );
+		return Foto::find( "all", array("conditions" => array( "inmueble_id = ?", $inmueble_id ), 'order' => 'orden asc' ) );
 	}
 
 	public function inmueble()
   {
-    return $this->belongsTo('App\Models\Inmuebles','inmueble_id');
+    return $this->belongsTo(App\Models\Inmueble::class,'inmueble_id');
   }
 	
 }

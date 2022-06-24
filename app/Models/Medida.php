@@ -3,16 +3,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Monedas extends Model {
+class Medida extends Model {
 	
-	protected $table = 'monedas';
+	protected $table = 'medidas';
 	protected $fillable = [
 		'name',
 	];
-
+	
 	public function inmuebles()
   {
-    return $this->hasMany('App\Models\Inmuebles','departamento_ciudad');
+    return $this->hasMany(App\Models\Inmueble::class, 'departamento_ciudad');
   }
-	
+
 }

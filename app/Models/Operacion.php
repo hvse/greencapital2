@@ -3,7 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Operaciones extends Model {
+class Operacion extends Model {
 	
 	protected $table = 'operaciones';
 	protected $fillable = [
@@ -13,7 +13,7 @@ class Operaciones extends Model {
 
 	public function inmuebles()
   {
-    return $this->hasMany('App\Models\Inmuebles','operacion_id');
+    return $this->hasMany(App\Models\Inmueble::class, 'operacion_id');
   }
 	
 }
