@@ -49,7 +49,7 @@ class InmueblesController extends Controller
       "categorias" => Categoria::all(),
       "medidas" => Medida::all(),
       "monedas" => Moneda::all(),
-      "departamentos" => Paraguay::orderBy('nombre'),
+      "departamentos" => Paraguay::where("departamento_id", 0)->orderBy('nombre')->get(),
       "fotos" => [],
       // "departamentos" => Paraguay::find("all", array("conditions"=>array("departamento_id=0"), "order" => "nombre" )),
     ]);
@@ -63,7 +63,7 @@ class InmueblesController extends Controller
    */
   public function store(Request $request)
   {
-    Inmueble::create($request->validated());
+    Inmueble::create($request->all());
     return redirect()->route("inmuebles.index");
   }
 }

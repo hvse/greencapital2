@@ -16,6 +16,8 @@ class CreateParaguayTable extends Migration
         Schema::create('paraguay', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->unsignedBigInteger('departamento_id')->nullable();
+            // $table->foreign('departamento_id')->references('id')->on('paraguay');
             $table->timestamps();
         });
     }

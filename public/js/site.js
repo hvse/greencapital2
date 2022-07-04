@@ -565,9 +565,9 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 		var installedChunks = {
 /******/ 			"/js/site": 0,
 /******/ 			"css/site": 0,
+/******/ 			"css/dashboard": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/old": 0,
-/******/ 			"css/dashboard": 0
+/******/ 			"css/old": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -617,11 +617,11 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/site","css/app","css/old","css/dashboard"], () => (__webpack_require__("./resources/js/site.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/site","css/app","css/old","css/dashboard"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/site","css/app","css/old","css/dashboard"], () => (__webpack_require__("./resources/sass/site.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/site","css/app","css/old","css/dashboard"], () => (__webpack_require__("./resources/sass/dashboard.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/site","css/app","css/old","css/dashboard"], () => (__webpack_require__("./resources/sass/old.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/site","css/dashboard","css/app","css/old"], () => (__webpack_require__("./resources/js/site.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/site","css/dashboard","css/app","css/old"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/site","css/dashboard","css/app","css/old"], () => (__webpack_require__("./resources/sass/site.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/site","css/dashboard","css/app","css/old"], () => (__webpack_require__("./resources/sass/dashboard.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/site","css/dashboard","css/app","css/old"], () => (__webpack_require__("./resources/sass/old.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

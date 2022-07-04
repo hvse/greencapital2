@@ -1,8 +1,8 @@
 @import 'variables';
 
-body {
-  font-size: .875rem;
-}
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '../css/gz.css';
 
 .feather {
   width: 16px;
@@ -62,7 +62,6 @@ body {
 }
 
 .sidebar-heading {
-  font-size: .75rem;
   text-transform: uppercase;
 }
 
@@ -73,7 +72,7 @@ body {
 .navbar-brand {
   padding-top: .75rem;
   padding-bottom: .75rem;
-  font-size: 1rem;
+
   background-color: rgba(0, 0, 0, .25);
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
 }
@@ -99,3 +98,12 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+
+// EXTRA
+.input_image{ width:100px; height:100px; float:left; background:#090; margin:5px; position:relative; overflow:hidden; }
+.input_image img{ position:absolute; }
+.input_image a{ display:none; position:absolute; z-index:10}
+.input_image input[type=file]{ width:100px; height:100px; margin-top:45px; display:none; position:absolute; }
+.input_image:hover input[type=file], .input_image:hover a{ display:inline; }
+.input_portada{ bottom: 0; position: absolute; right: 0; }
