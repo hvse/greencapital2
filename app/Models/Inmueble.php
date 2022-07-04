@@ -2,6 +2,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Inmueble extends Model {
 	
@@ -46,7 +47,7 @@ class Inmueble extends Model {
 				LEFT JOIN medidas ON (inmuebles.medida_id = medidas.id)
 				LEFT JOIN paraguay ON (inmuebles.departamento_ciudad = paraguay.id)
 				WHERE published = 1";
-		return self::find_by_sql($sql);
+		return DB::select($sql);
 	}
 
 	static public function searchAll() {
@@ -129,38 +130,38 @@ class Inmueble extends Model {
 				WHERE inmuebles.id = ".$id."
 				AND inmuebles.published = 1";
 
-		$return = self::find_by_sql($sql);
+		$return = DB::select($sql);
 		return $return[0];
 	}
 
 	public function agente()
   {
-    return $this->belongsTo(App\Models\User::class, 'agente_id');
+    return $this->belongsTo(User::class, 'agente_id');
   }
 
 	public function categoria()
   {
-    return $this->belongsTo(App\Models\Categoria::class, 'categoria_id');
+    return $this->belongsTo(Categoria::class, 'categoria_id');
   }
 
 	public function medida()
   {
-    return $this->belongsTo(App\Models\Medida::class, 'medida_id');
+    return $this->belongsTo(Medida::class, 'medida_id');
   }
 
 	public function moneda()
   {
-    return $this->belongsTo(App\Models\Moneda::class, 'moneda_id');
+    return $this->belongsTo(Moneda::class, 'moneda_id');
   }
 
 	public function operacion()
   {
-    return $this->belongsTo(App\Models\Operacion::class, 'operaciones_id');
+    return $this->belongsTo(Operacion::class, 'operaciones_id');
   }
 
 	public function ciudad()
   {
-    return $this->belongsTo(App\Models\Paraguay::class, 'departamento_ciudad');
+    return $this->belongsTo(Paraguay::class, 'departamento_ciudad');
   }
 
 }
