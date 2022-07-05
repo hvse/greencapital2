@@ -44,6 +44,7 @@ Route::get('/en/resources', function() { return view('site.en.porque_paraguay');
 Route::get('/en/official_data', function() { return view('site.en.conoce_paraguay'); })->name('official_data');
 Route::get('/en/contacts', function() { return view('site.en.contactos'); })->name('contacts');
 Route::get('/en/privacy', function() { return view('site.en.privacy'); })->name('privacy');
+Route::get('/en/state', function() { return view('site.en.inmuebles'); })->name('state');
 
 Auth::routes();
 

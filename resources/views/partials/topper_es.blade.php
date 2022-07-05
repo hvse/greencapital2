@@ -36,7 +36,10 @@
 		<li>
 			<a href="./es/inmuebles" class="">PROPIEDADES</a>
 			<ul>
-				<li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=1" class="">CASA URBANA<span class="flecha">▶</span></a></li><li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=2" class="">DUPLEX<span class="flecha">▶</span></a></li><li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=3" class="">DEPARTAMENTO<span class="flecha">▶</span></a></li><li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=4" class="">LOTE<span class="flecha">▶</span></a></li><li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=5" class="">ESTANCIA I CHACRA<span class="flecha">▶</span></a></li><li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=6" class="">EDIFICIO <span class="flecha">▶</span></a></li><li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=8" class="">CASA RURAL<span class="flecha">▶</span></a></li><li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=9" class="">OFICINA<span class="flecha">▶</span></a></li>			</ul>
+				@foreach(\App\Models\Categoria::all() as $cat)
+				<li style="border-bottom:1px solid #fff"><a href="{{ route('inmuebles') }}?categoria_id={{ $cat->id }}" class="{{ isset($_GET['categoria_id']) && $cat->id == $_GET['categoria_id'] ? 'active' : '' }}">{{ $cat->name_es }}<span class="flecha">▶</span></a></li>	
+				@endforeach
+			</ul>
 		</li>
 
 		<li>

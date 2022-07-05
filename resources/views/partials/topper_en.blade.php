@@ -20,30 +20,25 @@
 <div id="" class="nav block">
 	<ul>
 		<li><a href="{{ route('contacts') }}" class="{{ setActive('contacts') }}">CONTACTS</a></li>
-		<!-- <li><a href="./es/porque_paraguay" class="">PARAGUAY</a></li> -->
+		{{-- <!-- <li><a href="./en/porque_paraguay" class="">PARAGUAY</a></li> --> --}}
 
 		<li>
 			<a href="javascript:;" class="{{ setActive('resources') }}{{ setActive('official_data') }}">PARAGUAY</a>
 			<ul>
 				<li style="border-bottom:1px solid #fff"><a href="{{ route('resources') }}" class="{{ setActive('resources') }}">RESOURSES<span class="flecha">▶</span></a></li>
 				<li style="border-bottom:1px solid #fff"><a href="{{ route('official_data') }}" class="{{ setActive('official_data') }}">OFFICIAL DATA<span class="flecha">▶</span></a></li>
-				{{-- <li><a href="./es/noticias" class="">NOTICIAS</a></li> --}}
+				{{-- <li><a href="./en/noticias" class="">NOTICIAS</a></li> --}}
 			</ul>
 		</li>
 		
-		<!-- <li><a href="./es/propiedades" class=""></a></li> -->
+		{{-- <!-- <li><a href="./en/propiedades" class=""></a></li> --> --}}
 
 		<li>
-			<a href="./es/inmuebles" class="">PROPERTIES</a>
+			<a href="{{ route('state') }}" class="{{ setActive('state') }}">PROPERTIES</a>
 			<ul>
-				<li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=1" class="">CASA URBANA<span class="flecha">▶</span></a></li>
-				<li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=2" class="">DUPLEX<span class="flecha">▶</span></a></li>
-				<li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=3" class="">DEPARTAMENTO<span class="flecha">▶</span></a></li>
-				<li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=4" class="">LOTE<span class="flecha">▶</span></a></li>
-				<li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=5" class="">ESTANCIA I CHACRA<span class="flecha">▶</span></a></li>
-				<li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=6" class="">EDIFICIO <span class="flecha">▶</span></a></li>
-				<li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=8" class="">CASA RURAL<span class="flecha">▶</span></a></li>
-				<li style="border-bottom:1px solid #fff"><a href="./es/inmuebles?categoria_id=9" class="">OFICINA<span class="flecha">▶</span></a></li>
+				@foreach(\App\Models\Categoria::all() as $cat)
+				<li style="border-bottom:1px solid #fff"><a href="{{ route('state') }}?categoria_id={{ $cat->id }}" class="{{ isset($_GET['categoria_id']) && $cat->id == $_GET['categoria_id'] ? 'active' : '' }}">{{ $cat->name_en }}<span class="flecha">▶</span></a></li>	
+				@endforeach
 			</ul>
 		</li>
 
@@ -71,8 +66,8 @@
 			<ul>
 				<li style="border-bottom:1px solid #fff"><a href="{{ route('the_company') }}" class="{{ setActive('the_company') }}">THE COMPANY<span class="flecha">▶</span></a></li>
 				<li style="border-bottom:1px solid #fff"><a href="{{ route('mission') }}" class="{{ setActive('mission') }}">MISSION-VISION-VALUES<span class="flecha">▶</span></a></li>				
-				<!-- <li style="border-bottom:1px solid #fff"><a href="./es/quienes_somos"  class="" >STAFF<span class="flecha">&#9654;</span></a></li> -->
-				<!-- <li><a href="./es/nos_dirigimos_a" class="" >CUSTOMERS<span class="flecha">&#9654;</span></a></li> -->
+				{{-- <!-- <li style="border-bottom:1px solid #fff"><a href="./en/quienes_somos"  class="" >STAFF<span class="flecha">&#9654;</span></a></li> -->
+				<!-- <li><a href="./en/nos_dirigimos_a" class="" >CUSTOMERS<span class="flecha">&#9654;</span></a></li> --> --}}
 			</ul>
 		</li>
 		<li><a href="{{ route('inicio') }}" class="{{ setActive('home') }}">HOME PAGE</a></li>
