@@ -19,7 +19,7 @@
         $c++
       @endphp
 			<div class="{{$c%2 ? 'bgGris5' : 'bgf5f5f5' }} padd5 inmuebles_list_box">
-				<a href="/MOD/ACC/detalle/$i->id" class="color_gris" title="Click para ver más">
+				<a href="{{ route('property', $i->id) }}" class="color_gris" title="Click para ver más">
 					@php
 					  $src="/images/inmuebles/ch/".$i->portada.".jpg";
             
