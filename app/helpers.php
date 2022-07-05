@@ -59,7 +59,17 @@ function validEmail($email){
 }
 
 function setActive($routeName){
-  return request()->routeIs($routeName) ? 'active' : '';
+  $active = '';
+  if (is_array($routeName)) {
+    foreach ($routeName as $routeN) {
+      if (request()->routeIs($routeName)) {
+        $active = 'active';
+      }
+    }
+  } else {
+    $active = request()->routeIs($routeName) ? 'active' : '';
+  }
+  return $active;
 }
 
 function controllerName(){

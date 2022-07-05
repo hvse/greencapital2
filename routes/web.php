@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,12 @@ Route::get('/es/conoce_paraguay', function() { return view('site.es.conoce_parag
 Route::get('/es/contactos', function() { return view('site.es.contactos'); })->name('contactos');
 Route::get('/es/privacidad', function() { return view('site.es.privacidad'); })->name('privacidad');
 Route::get('/es/inmuebles', function() { return view('site.es.inmuebles'); })->name('inmuebles');
+Route::get('/es/inmueble/{id}', function(Request $request, $id) {
+  $inmueble = \App\Models\Inmueble::find($id);
+  return view('site.es.inmueble', [
+    'inmueble' => $inmueble,
+  ]);
+})->name('inmueble');
 // en
 Route::get('/en/', function() { return view('site.en.home'); })->name('home');
 Route::get('/en/the_company', function() { return view('site.en.la_empresa'); })->name('the_company');

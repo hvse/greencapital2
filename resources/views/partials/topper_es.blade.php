@@ -20,21 +20,17 @@
 <div id="" class="nav block">
 	<ul>
 		<li><a href="{{ route('contactos') }}" class="{{ setActive('contactos') }}">CONTACTOS</a></li>
-		<!-- <li><a href="./es/porque_paraguay" class="">PARAGUAY</a></li> -->
 
 		<li>
 			<a href="javascript:;" class="{{ setActive('porque_paraguay') }}{{ setActive('conoce_paraguay') }}">PARAGUAY</a>
 			<ul>
 				<li style="border-bottom:1px solid #fff"><a href="{{ route('porque_paraguay') }}" class="{{ setActive('porque_paraguay') }}">RECURSOS<span class="flecha">▶</span></a></li>
 				<li style="border-bottom:1px solid #fff"><a href="{{ route('conoce_paraguay') }}" class="{{ setActive('conoce_paraguay') }}">DATOS OFICIALES<span class="flecha">▶</span></a></li>
-				{{-- <li><a href="./es/noticias" class="">NOTICIAS</a></li> --}}
 			</ul>
 		</li>
 		
-		<!-- <li><a href="./es/propiedades" class=""></a></li> -->
-
 		<li>
-			<a href="./es/inmuebles" class="">PROPIEDADES</a>
+			<a href="{{ route('inmuebles') }}" class="{{ setActive(['inmuebles', 'inmueble']) }}">PROPIEDADES</a>
 			<ul>
 				@foreach(\App\Models\Categoria::all() as $cat)
 				<li style="border-bottom:1px solid #fff"><a href="{{ route('inmuebles') }}?categoria_id={{ $cat->id }}" class="{{ isset($_GET['categoria_id']) && $cat->id == $_GET['categoria_id'] ? 'active' : '' }}">{{ $cat->name_es }}<span class="flecha">▶</span></a></li>	
@@ -66,8 +62,6 @@
 			<ul>
 				<li style="border-bottom:1px solid #fff"><a href="{{ route('la_empresa') }}" class="{{ setActive('la_empresa') }}">LA EMPRESA<span class="flecha">▶</span></a></li>
 				<li style="border-bottom:1px solid #fff"><a href="{{ route('mision') }}" class="{{ setActive('mision') }}">MISIÓN-VISIÓN-VALORES<span class="flecha">▶</span></a></li>				
-				<!-- <li style="border-bottom:1px solid #fff"><a href="./es/quienes_somos"  class="" >STAFF<span class="flecha">&#9654;</span></a></li> -->
-				<!-- <li><a href="./es/nos_dirigimos_a" class="" >CLIENTES<span class="flecha">&#9654;</span></a></li> -->
 			</ul>
 		</li>
 		<li><a href="{{ route('inicio') }}" class="{{ setActive('inicio') }}">INICIO</a></li>

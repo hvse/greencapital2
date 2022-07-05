@@ -13,7 +13,7 @@ class Foto extends Model {
 	];
 
 	public static function inmueblePhoto ( $inmueble_id ) {
-		return Foto::find( "all", array("conditions" => array( "inmueble_id = ?", $inmueble_id ), 'order' => 'orden asc' ) );
+		return Foto::where( "inmueble_id", $inmueble_id )->orderBy('orden asc');
 	}
 
 	public function inmueble()
