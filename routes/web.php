@@ -29,6 +29,7 @@ Route::get('/es/porque_paraguay', function() { return view('site.es.porque_parag
 Route::get('/es/conoce_paraguay', function() { return view('site.es.conoce_paraguay'); })->name('conoce_paraguay');
 Route::get('/es/contactos', function() { return view('site.es.contactos'); })->name('contactos');
 Route::get('/es/privacidad', function() { return view('site.es.privacidad'); })->name('privacidad');
+Route::get('/es/inmuebles', function() { return view('site.es.inmuebles'); })->name('inmuebles');
 // en
 Route::get('/en/', function() { return view('site.en.home'); })->name('home');
 Route::get('/en/the_company', function() { return view('site.en.la_empresa'); })->name('the_company');

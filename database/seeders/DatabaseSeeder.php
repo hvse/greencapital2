@@ -29,18 +29,18 @@ class DatabaseSeeder extends Seeder
           ]);
         Operacion::insert([
             "id" => 1,
-            "name_en" => "VENTA",
-            "name_es" => "FOR SALE",
+            "name_es" => "VENTA",
+            "name_en" => "FOR SALE",
         ]);
         Operacion::insert([
             "id" => 2,
-            "name_en" => "ALQUILER",
-            "name_es" => "FOR RENT",
+            "name_es" => "ALQUILER",
+            "name_en" => "FOR RENT",
         ]);
         Operacion::insert([
             "id" => 3,
-            "name_en" => "VENTA/ALQUILER",
-            "name_es" => "FOR SALE / FOR RENT",
+            "name_es" => "VENTA/ALQUILER",
+            "name_en" => "FOR SALE / FOR RENT",
         ]);
 
         Categoria::insert([

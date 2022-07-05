@@ -47,7 +47,7 @@
 				<td>
 				{{-- <a class="btn btn-success" href="./admin/MOD/editar/:ID?pdf"><span class="icon-download-alt"></span> PDF</a> --}}
 					<a href="{{ route('inmuebles.edit', $inmueble) }}" class="btn btn-primary"><span class="icon-edit"></span> Editar</a>
-					<a href="./admin/MOD/eliminar/:ID" class="btn btn-danger"><span class="icon-trash"></span> Eliminar</a>
+					{{-- <a href="./admin/MOD/eliminar/:ID" class="btn btn-danger"><span class="icon-trash"></span> Eliminar</a> --}}
 				</td>
 			</tr>
 			@endforeach
