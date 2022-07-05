@@ -155,7 +155,7 @@
     @php
       /**/
     @endphp
-    @foreach( $inmueble->fotos as $foto )
+    @foreach( $fotos as $foto )
     <li class="input_image" id="photo{{ $foto->id }}">
       <a href="#myModal" onClick="toDelete({{ $foto->id }})" data-toggle="modal" title="Eliminar esta foto"><span class="icon-trash icon-white"></span></a>
       @php
@@ -187,7 +187,7 @@
   <div class="form-actions">
   <button type="submit" class="btn btn-primary">Guardar</button>
   <a class="btn" href="./admin/{{ controllerName() }}/">Cancelar</a>
-  <a class="btn btn-danger pull-right" href="./admin/{{ controllerName() }}/eliminar/{{ $inmueble->id }}">Eliminar</a>
+  <a class="btn btn-danger right" href="./admin/{{ controllerName() }}/eliminar/{{ $inmueble->id }}">Eliminar</a>
 </div>
 </div>
 
