@@ -155,16 +155,18 @@
     @php
       /**/
     @endphp
-    @foreach( $fotos as $foto )
+    @foreach( $inmueble->fotos as $foto )
     <li class="input_image" id="photo{{ $foto->id }}">
       <a href="#myModal" onClick="toDelete({{ $foto->id }})" data-toggle="modal" title="Eliminar esta foto"><span class="icon-trash icon-white"></span></a>
       @php
-        $src = "./images/inmuebles/ch/".$foto->id.".jpg";
-        $src = is_file($src) ? $src : "";
+        $src = "/images/inmuebles/ch/".$foto->id.".jpg";
+        //$src = public_path("images/inmuebles/ch/".$foto->id.".jpg");
+        //$src = is_file($src) ? $src : "";
+        //dd(public_path("images/inmuebles/ch/".$foto->id.".jpg"));
       @endphp
       <img src="{{ $src }}" width="100" />
       <input type="hidden" name="fotos[]" value="{{ $foto->id }}">
-      <input class="input_portada" type="radio" name="portada" value="{{ $foto->id }}" <?if( $foto->id == $inmueble->portada ){echo'checked';} }} title="Imagen para mostrar en la lista de búsquedas" />
+      <input class="input_portada" type="radio" name="portada" value="{{ $foto->id }}" {{ $foto->id == $inmueble->portada ? 'checked' : '' }} title="Imagen para mostrar en la lista de búsquedas" />
     </li>
     @endforeach
     @php
@@ -172,7 +174,7 @@
     @endphp
     </ul>
 
-    <a class="input_image fff font72 center bold" style="text-decoration:none" title="Agregar Foto" href="javascript:;" id="addPhoto">
+    <a class="input_image fff font61 center bold" style="text-decoration:none" title="Agregar Foto" href="javascript:;" id="addPhoto">
       +
     </a>
 
@@ -249,7 +251,7 @@ $(function () {
 			'<input type="hidden" name="fotos[]" value="'+abc[c]+'"><img src="" width="100" />'+
 			'<a href="javascript:;" title="Eliminar esta foto" class="to_add"><span class="icon-trash icon-white"></span></a>'+
 			'<input name="imagen[]" type="file"/>'+
-			'<input class="input_portada" type="radio" value="'+abc[c]+'" name="portada" title="Imagen para mostrar en la lista de búsquedas" />'+
+			'<input class="input_portada" type="radio" value="'+abc[c]+'" checked name="portada" title="Imagen para mostrar en la lista de búsquedas" />'+
 			'</li>');
 		c++;
 		$("li.input_image a.to_add").click(function(){

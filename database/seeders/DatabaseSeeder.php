@@ -105,5 +105,10 @@ class DatabaseSeeder extends Seeder
             "name" => "₲"
         ]);
 
+        Moneda::insert([
+            "id" => 2,
+            "name" => "USD"
+        ]);
+
     }
 }

@@ -42,6 +42,7 @@ class CreateInmueblesTable extends Migration
             $table->boolean('sold')->default(false);
             $table->integer('superficie_total')->default(0);
             $table->string('zona');
+            $table->integer('portada');
             $table->timestamps();
         });
     }

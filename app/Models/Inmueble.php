@@ -164,4 +164,9 @@ class Inmueble extends Model {
     return $this->belongsTo(Paraguay::class, 'departamento_ciudad');
   }
 
+	public function fotos()
+  {
+    return $this->hasMany(Foto::class, 'inmueble_id');
+  }
+
 }

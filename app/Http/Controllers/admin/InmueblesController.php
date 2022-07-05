@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\helpers\UploadHelper;
 use App\Models\Inmueble;
 use App\Models\Operacion;
 // use App\Http\Requests\SaveInmueblesRequest;
@@ -51,7 +52,6 @@ class InmueblesController extends Controller
       "monedas" => Moneda::all(),
       "departamentos" => Paraguay::where("departamento_id", 0)->orderBy('nombre')->get(),
       "fotos" => [],
-      // "departamentos" => Paraguay::find("all", array("conditions"=>array("departamento_id=0"), "order" => "nombre" )),
     ]);
   }
 
@@ -65,5 +65,128 @@ class InmueblesController extends Controller
   {
     Inmueble::create($request->all());
     return redirect()->route("inmuebles.index");
+  }
+
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function edit($id)
+  {
+    return view("inmuebles.edit",[
+      "inmueble" => Inmueble::find($id),
+      "users" => User::all(),
+      "operaciones" => Operacion::all(),
+      "categorias" => Categoria::all(),
+      "medidas" => Medida::all(),
+      "monedas" => Moneda::all(),
+      "departamentos" => Paraguay::where("departamento_id", 0)->orderBy('nombre')->get(),
+    ]);
+  }
+
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, $id)
+  {
+    $inmueble = Inmueble::find($id);
+    $newData = $request->all();
+
+    // if ( isset($_POST['photo']) ) {
+		// 	self::deletePhoto($_POST['photo']);
+		// 	exit;
+		// }
+
+    // dd(public_path('images/inmueble/') . $inmueble->image);
+    
+    // if ($request->image) {
+    //   $request->validate([
+    //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    //   ]);
+    //   // Storage::delete(public_path('images/inmueble/') . $inmueble->image);
+    //   if ($inmueble->image && file_exists(public_path('images/inmueble/') . $inmueble->image)) {
+    //     unlink(public_path('images/inmueble/') . $inmueble->image);
+    //   }
+    //   // $newData["image"] = $request->image->getClientOriginalName();
+    //   $request->image->move(public_path('images/inmueble'), $request->image->getClientOriginalName());
+    // }
+
+    if ( isset($_POST['fotos']) ) {
+      foreach( $_POST['fotos'] as $order => $foto_id ) {
+        if ( is_numeric($foto_id) ) {
+          $foto = Foto::find($foto_id);
+          $foto->orden = $order;
+          $foto->save();
+        }else{
+          $orden[] = $order;
+          $orden_portada[] = $foto_id;
+        }
+      }
+      unset($_POST['fotos']);
+      if ( !is_numeric($_POST['portada']) ) {
+        $portada = $_POST['portada'];
+        unset($_POST['portada']);
+      }
+    }
+
+    $inmueble->update($newData);
+    //$imageName =  //$inmueble->id.'.'.$request->image->extension();  
+
+    $inmueble_id = $id;
+
+    if ( $_FILES ) {
+      $fotos = Foto::where("inmueble_id", $id)->get();
+			foreach( $fotos as $foto ) {
+				self::deletePhoto($foto->id);
+			}
+      $c = 0;
+      foreach ( $_FILES['imagen']['name'] as $name ) {
+        if ( $name ) {
+          $orden_c = $orden[$c] ? $orden[$c] : $c;
+          $newPhoto = new Foto(array("inmueble_id" => $inmueble_id, "orden" => $orden_c ));
+          $newPhoto->save();
+          $id = $newPhoto->id;
+
+          if( $orden_portada[$c] == $portada ) {
+            $inmueble->portada = $id;
+            $inmueble->save();
+          }
+
+          if ( empty($portada) ) {
+            $inmueble->portada = $id;
+            $inmueble->save();
+            $portada = $id;
+          }
+
+
+          UploadHelper::cropAndUp( array ( "name" => $id, "width" => 100, "folder" => public_path('images/inmuebles/ch/'), "orden" => $c ) );
+          UploadHelper::cropAndUp( array ( "name" => $id, "width" => 500, "folder" => public_path('images/inmuebles/'), "orden" => $c ) );
+          $c++;
+        }
+      }
+    }
+  
+    return redirect()->route("inmuebles.edit", [$inmueble])->with("success", "datos guardados");
+  }
+
+  private function deletePhoto( $id ){
+    $post = Foto::find($id);
+    $post->delete();
+    
+    $src = public_path("./images/inmuebles/".$id.".jpg");
+    if ( is_file($src) ) {
+      unlink($src);
+    }
+  
+    $src = public_path("./images/inmuebles/ch/".$id.".jpg");
+    if ( is_file($src) ) {
+      unlink($src);
+    }
   }
 }
