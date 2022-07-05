@@ -14,8 +14,9 @@
       @foreach($inmuebles as $inmueble )
       @php
         $c ++;
-        $img = './images/inmuebles/ch/'.$inmueble['portada'].'.jpg';
-        $image = is_file($img) ? $img : './images/inmuebles/nofound.jpg';
+        $img = '/images/inmuebles/ch/'.$inmueble->portada.'.jpg';
+        $absolutePath = public_path('/images/inmuebles/ch/'.$inmueble->portada.'.jpg');
+        $image = is_file($absolutePath) ? $img : './images/inmuebles/nofound.jpg';
       @endphp
 			<tr>
 				<td>
@@ -44,7 +45,7 @@
             {{ number_format($inmueble['precio'], 0, ',', '.') }} {{ $inmueble->moneda->name }}
           </div>
 				<td>
-				<a class="btn btn-success" href="./admin/MOD/editar/:ID?pdf"><span class="icon-download-alt"></span> PDF</a>
+				{{-- <a class="btn btn-success" href="./admin/MOD/editar/:ID?pdf"><span class="icon-download-alt"></span> PDF</a> --}}
 					<a href="{{ route('inmuebles.edit', $inmueble) }}" class="btn btn-primary"><span class="icon-edit"></span> Editar</a>
 					<a href="./admin/MOD/eliminar/:ID" class="btn btn-danger"><span class="icon-trash"></span> Eliminar</a>
 				</td>
