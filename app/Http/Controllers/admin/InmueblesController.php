@@ -75,6 +75,7 @@ class InmueblesController extends Controller
    */
   public function edit($id)
   {
+    $fotos = Foto::where('inmueble_id', $id)->orderBy('orden')->get();
     return view("inmuebles.edit",[
       "inmueble" => Inmueble::find($id),
       "users" => User::all(),
@@ -83,6 +84,7 @@ class InmueblesController extends Controller
       "medidas" => Medida::all(),
       "monedas" => Moneda::all(),
       "departamentos" => Paraguay::where("departamento_id", 0)->orderBy('nombre')->get(),
+      "fotos" => $fotos,
     ]);
   }
 
