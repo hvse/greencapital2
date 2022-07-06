@@ -134,6 +134,7 @@ class InmueblesController extends Controller
       if ( !is_numeric($_POST['portada']) ) {
         $portada = $_POST['portada'];
         unset($_POST['portada']);
+        unset($newData['portada']);
       }
     }
 
