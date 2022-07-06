@@ -64,7 +64,6 @@ class InmueblesController extends Controller
    */
   public function store(SavePropertyRequest $request)
   {
-    return $request;
     $orden = array();
     $portada = null;
     $orden_portada = array();
