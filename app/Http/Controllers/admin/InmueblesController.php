@@ -64,6 +64,7 @@ class InmueblesController extends Controller
    */
   public function store(SavePropertyRequest $request)
   {
+    return $request;
     $orden = array();
     $portada = null;
     $orden_portada = array();
@@ -86,7 +87,7 @@ class InmueblesController extends Controller
       }
     }
 
-    $inmueble = Inmueble::create($request->validate());
+    $inmueble = Inmueble::create($request->validated());
     $inmueble_id = $inmueble->id;
 
     if ( $_FILES ) {
