@@ -9,6 +9,7 @@ use App\Models\Operacion;
 use Illuminate\Support\Facades\DB;
 use \Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SavePropertyRequest;
 use App\Models\Categoria;
 use App\Models\Medida;
 use App\Models\Moneda;
@@ -61,10 +62,59 @@ class InmueblesController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
+  public function store(SavePropertyRequest $request)
   {
-    Inmueble::create($request->all());
-    return redirect()->route("inmuebles.index");
+    $orden = array();
+    $portada = null;
+    $orden_portada = array();
+
+    if ( isset($_POST['fotos']) ) {
+      foreach( $_POST['fotos'] as $order => $foto_id ) {
+        if ( is_numeric($foto_id) ) {
+          $foto = Foto::find($foto_id);
+          $foto->orden = $order;
+          $foto->save();
+        }else{
+          $orden[] = $order;
+          $orden_portada[] = $foto_id;
+        }
+      }
+      unset($_POST['fotos']);
+      if ( !is_numeric($_POST['portada']) ) {
+        $portada = $_POST['portada'];
+        unset($_POST['portada']);
+      }
+    }
+
+    $inmueble = Inmueble::create($request->validate());
+    $inmueble_id = $inmueble->id;
+
+    if ( $_FILES ) {
+      $c = 0;
+      foreach ( $_FILES['imagen']['name'] as $name ) {
+        if ( $name ) {
+          $orden_c = $orden[$c] ? $orden[$c] : $c;
+          $newPhoto = new Foto(array("inmueble_id" => $inmueble_id, "orden" => $orden_c ));
+          $newPhoto->save();
+          $id = $newPhoto->id;
+
+          if( $orden_portada[$c] == $portada ) {
+            $inmueble->portada = $id;
+            $inmueble->save();
+          }
+          
+          if ( empty($portada) ) {
+            $inmueble->portada = $id;
+            $inmueble->save();
+            $portada = $id;
+          }
+
+          UploadHelper::cropAndUp( array ( "name" => $id, "width" => 100, "folder" => public_path('images/inmuebles/ch/'), "orden" => $c ) );
+          UploadHelper::cropAndUp( array ( "name" => $id, "width" => 500, "folder" => public_path('images/inmuebles/'), "orden" => $c ) );
+          $c++;
+        }
+      }
+    }
   }
 
   /**
@@ -95,29 +145,9 @@ class InmueblesController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id)
+  public function update(SavePropertyRequest $request, $id)
   {
     $inmueble = Inmueble::find($id);
-    $newData = $request->all();
-
-    // if ( isset($_POST['photo']) ) {
-		// 	self::deletePhoto($_POST['photo']);
-		// 	exit;
-		// }
-
-    // dd(public_path('images/inmueble/') . $inmueble->image);
-    
-    // if ($request->image) {
-    //   $request->validate([
-    //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    //   ]);
-    //   // Storage::delete(public_path('images/inmueble/') . $inmueble->image);
-    //   if ($inmueble->image && file_exists(public_path('images/inmueble/') . $inmueble->image)) {
-    //     unlink(public_path('images/inmueble/') . $inmueble->image);
-    //   }
-    //   // $newData["image"] = $request->image->getClientOriginalName();
-    //   $request->image->move(public_path('images/inmueble'), $request->image->getClientOriginalName());
-    // }
 
     if ( isset($_POST['fotos']) ) {
       foreach( $_POST['fotos'] as $order => $foto_id ) {
@@ -136,11 +166,11 @@ class InmueblesController extends Controller
         unset($_POST['portada']);
       }
     }
-    if (isset($newData['portada'])) {
-      unset($newData['portada']);
+    if (isset($_POST['portada'])) {
+      unset($_POST['portada']);
     }
 
-    $inmueble->update($newData);
+    $inmueble->update($request->validate());
     //$imageName =  //$inmueble->id.'.'.$request->image->extension();  
 
     $inmueble_id = $id;
