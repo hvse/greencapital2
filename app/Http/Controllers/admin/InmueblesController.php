@@ -171,7 +171,7 @@ class InmueblesController extends Controller
       unset($_POST['portada']);
     }
 
-    $inmueble->update($request->validate());
+    $inmueble->update($request->validated());
     //$imageName =  //$inmueble->id.'.'.$request->image->extension();  
 
     $inmueble_id = $id;
