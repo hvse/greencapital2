@@ -13,7 +13,7 @@ class SavePropertyRequest extends FormRequest
      */
     public function authorize()
     {
-      return $this->user() && $this->user()->is_admin;
+      return auth()->user() && auth()->user()->is_admin;
     }
 
     /**
