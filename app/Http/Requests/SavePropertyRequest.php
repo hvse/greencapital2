@@ -13,7 +13,7 @@ class SavePropertyRequest extends FormRequest
      */
     public function authorize()
     {
-      return $this->user() ? $this->user()->isAdmin() : false ;
+      return $this->user() && $this->user()->is_admin;
     }
 
     /**
@@ -24,15 +24,29 @@ class SavePropertyRequest extends FormRequest
     public function rules()
     {
       return [
-        "name" => "required",
-        "lastname" => "",
-        "document" => "required",
-        "email" => "required",
-        "phone" => "required",
-        "password" => "",
-        "is_admin" => "boolean",
-        "is_driver" => "boolean",
-        "available" => "boolean"
+        "published" => "",
+        "sold" => "",
+        "codigo" => "",
+        "operacion_id" => "",
+        "dormitorios" => "",
+        "caracteristicas_es" => "",
+        "caracteristicas_en" => "",
+        "categoria_id" => "",
+        "banos" => "",
+        "departamento_ciudad" => "",
+        "area_de_servicio" => "",
+        "zona" => "",
+        "cochera" => "",
+        "superficie_total" => "",
+        "medida_id" => "",
+        "precio" => "",
+        "moneda_id" => "",
+        "nota_es" => "",
+        "nota_en" => "",
+        "area_construida" => "",
+        "cliente" => "",
+        "agente_id" => "",
+        "fotos" => "",
       ];
     }
 }
