@@ -115,6 +115,7 @@ class InmueblesController extends Controller
         }
       }
     }
+    return redirect()->route("inmuebles.edit", [$inmueble])->with("success", "datos guardados");
   }
 
   /**
