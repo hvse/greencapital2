@@ -14,7 +14,7 @@
     <!-- Bootstrap -->
     <link href="{{ asset('./css/site.css') }}" rel="stylesheet" media="screen">
     <link href="{{ asset('./customScrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" media="screen">
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&subset=latin,latin-ext,vietnamese' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&subset=latin,latin-ext,vietnamese' rel='stylesheet' type='text/css'>
 	
 </head>
 
@@ -33,7 +33,7 @@
 	</div></a>
 	<div class="w70pc left">
 		<div class="padd20 padding-left0 padding-bottom0">
-			<a href="http://www.distance.to/" target="_blank">
+			<a href="https://www.distance.to/" target="_blank">
 				<div class="font39 paraguay_distancia_banner">
 					<div class="height12"></div>
 					<span class="color_mostaza	opacity0 relative" id="texto_distancia">Distances between countries</span>

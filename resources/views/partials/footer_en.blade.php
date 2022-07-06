@@ -14,9 +14,9 @@
 		</div>
 		<div class="w33pc left center">
 			<div class="height72"></div>
-			<a target="_blank" href="http://www.facebook.com/GreenCapitalParaguay"><img src="{{ asset('/images/btn_facebook.png') }}" style="max-width:40%"></a>
+			<a target="_blank" href="https://www.facebook.com/GreenCapitalParaguay"><img src="{{ asset('/images/btn_facebook.png') }}" style="max-width:40%"></a>
 			<a href="https://twitter.com/GreenCapitalPy"><img src="{{ asset('/images/btn_twitter.png') }}" style="max-width:40%"></a>
-			<a target="_blank" href="http://www.linkedin.com/company/green-capital-py"><img src="{{ asset('/images/btn_linkedin.png') }}" style="max-width:40%"></a>
+			<a target="_blank" href="https://www.linkedin.com/company/green-capital-py"><img src="{{ asset('/images/btn_linkedin.png') }}" style="max-width:40%"></a>
 		</div>
 		<div class="clear"></div>
 	</div>

@@ -65,7 +65,7 @@
 	<div id="ley1064_97" class="none justify"><p>
 			<span style="font-size: small"><em><strong><span style="font-family: Arial">“Outsourcing regime for productive processing and export”</span></strong></em></span></p>
 		<div>By means of Maquila, investors can introduce to the country; goods, products or services in order to be assembled, repaired, improved, or processed for their subsequent exportation, once the value added or “Paraguayan element” is incorporated.<br>
-		Paraguayan legislation does not impose restrictions regarding the types of products or services included in the maquila industry. The national policy of maquila activity in Paraguay is regulated and monitored by the National Council of the Maquila Export Industry (CNIME for its acronym in Spanish). Those who can benefit from this law are individuals or corporations, domestic or foreign, domiciled in the country.<a href="http://www.maquila.gov.py">www.maquila.gov.py</a>)</div>
+		Paraguayan legislation does not impose restrictions regarding the types of products or services included in the maquila industry. The national policy of maquila activity in Paraguay is regulated and monitored by the National Council of the Maquila Export Industry (CNIME for its acronym in Spanish). Those who can benefit from this law are individuals or corporations, domestic or foreign, domiciled in the country.<a href="https://www.maquila.gov.py">www.maquila.gov.py</a>)</div>
 		<div><br>
 		<strong>The most important benefits are:</strong></div>
 		<div>• 1% Maquila Unique Tax (over national value added or turnover, whichever is greater)</div>

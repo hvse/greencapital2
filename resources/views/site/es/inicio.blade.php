@@ -86,7 +86,7 @@
 		</div> -->
 	</div>
 	<div class="w33pc left">
-		<a href="http://www.maxicambios.com.py/" target= "_blank"><img src="images/bann_pie_home3.png" /></a>
+		<a href="https://www.maxicambios.com.py/" target= "_blank"><img src="images/bann_pie_home3.png" /></a>
 	</div>
 	<div class="clear"></div>
 </div>

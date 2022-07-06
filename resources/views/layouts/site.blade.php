@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('nivo_slider/themes/dark/dark.css') }}" type="text/css" media="screen">
     <link rel="stylesheet" href="{{ asset('nivo_slider/themes/bar/bar.css') }}" type="text/css" media="screen">
     <link rel="stylesheet" href="{{ asset('nivo_slider/nivo-slider.css') }}" type="text/css" media="screen">
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&amp;subset=latin,latin-ext,vietnamese" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&amp;subset=latin,latin-ext,vietnamese" rel="stylesheet" type="text/css">
 
 	<script type="text/javascript" src="{{ asset('/fancybox/jquery.mousewheel-3.0.4.pack.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('/fancybox/jquery.fancybox-1.3.4.pack.js') }}"></script>

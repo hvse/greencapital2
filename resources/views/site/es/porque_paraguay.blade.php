@@ -67,7 +67,7 @@
 			<span style="font-size: small"><em><strong><span style="font-family: Arial">"Régimen de subcontratación para el procesamiento productivo y la exportación"</span></strong></em></span></p>
 		<div>Mediante la Maquila los inversores pueden introducir al país bienes, productos o servicios a los efectos de ser ensamblados, reparados, mejorados, trabajados o procesados para su posterior exportación, una vez incorporados el valor agregado o “elemento paraguayo”. <br>
 		&nbsp;<br>
-		La legislación paraguaya no impone restricciones en cuanto a los tipos de productos o servicios comprendidos en la industria maquiladora. La política nacional de la actividad maquiladora en el Paraguay es regulada y controlada por el Consejo Nacional de la Industria Maquiladora de la Exportación (CNIME). Pueden acogerse a los beneficios otorgados por la ley las personas físicas o jurídicas, nacionales o extranjeras, domiciliadas en el país. (<a href="http://www.maquila.gov.py">www.maquila.gov.py</a>)</div>
+		La legislación paraguaya no impone restricciones en cuanto a los tipos de productos o servicios comprendidos en la industria maquiladora. La política nacional de la actividad maquiladora en el Paraguay es regulada y controlada por el Consejo Nacional de la Industria Maquiladora de la Exportación (CNIME). Pueden acogerse a los beneficios otorgados por la ley las personas físicas o jurídicas, nacionales o extranjeras, domiciliadas en el país. (<a href="https://www.maquila.gov.py">www.maquila.gov.py</a>)</div>
 		<div><br>
 		<strong>Los beneficios mas importantes son:</strong></div>
 		<div>• 1% Tributo Único Maquila (sobre el valor agregado nacional o la facturación, el que sea mayor)</div>
